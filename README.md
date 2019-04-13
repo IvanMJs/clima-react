@@ -1,4 +1,4 @@
-Clima hecho en react siguiendo el workshop de [Agustin Mulet](https://agustinmulet.github.io).
+Clima hecho en react siguiendo el workshop de [Agustin Mulet](https://agustinmulet.github.io/reactworkshop/).
 
 ## Available Scripts
 
