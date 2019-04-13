@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clima hecho en react siguiendo el workshop de [Agustin Mulet](https://agustinmulet.github.io).
 
 ## Available Scripts
 
