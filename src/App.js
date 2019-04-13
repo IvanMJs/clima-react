@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import './App.css'
+import Top from "./Top";
+import Bottom from './Bottom'
+
+
+
 const semana = [
   'Lunes',
   'Martes',
@@ -48,50 +53,13 @@ class App extends Component {
     return this.state.isLoaded ? (
       <div className="App">
         <div className="container">
-          <div className="top">
-            <img
-              src={current.condition.icon}
-              alt="Clima principal"
-              className="image"
-            />
-            <p className="temp">{current.temp_c} °C</p>
-            <h4 className="city">
-              {location.name}, {location.region}, {location.country}
-            </h4>
-            <div className="feelslike">
-              ST: {current.feelslike_c} °C, H: {current.humidity} %
-            </div>
-          </div>
+          <Top current={current} location={location} />
 
-          <div className="bottom">
-            {forecast.forecastday.map(dia => {
-              return (
-                <div className="card" key={dia.date}>
-                  <h5>{this.getWeekDay(dia.date_epoch)}</h5>
-                  <h6>{dia.date}</h6>
-                  <img
-                    src={dia.day.condition.icon}
-                    alt="Clima diario"
-                    className="imagebottom"
-                  />
-                  <div className="minmax">
-                    <p>
-                      <span className="tempmax" />
-                      {parseInt(dia.day.maxtemp_c)}
-                    </p>
-                    <p>
-                      <span className="tempmin" />
-                      {parseInt(dia.day.mintemp_c)}
-                    </p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <Bottom forecast={forecast} />
         </div>
       </div>
     ) : (
-      <div className="App">Cargando...</div>
+      <div className="App">Loading...</div>
     )
   }
 }
